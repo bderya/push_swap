@@ -6,7 +6,7 @@
 /*   By: bderya <bderya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:21:27 by bderya            #+#    #+#             */
-/*   Updated: 2023/03/03 03:04:01 by bderya           ###   ########.fr       */
+/*   Updated: 2023/03/03 03:38:43 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,11 @@ int		find_index(t_list *head, int element);
 /** Error hand **/
 int		ft_error(void);
 void	error_input(void);
+void	listclear(t_list **lst);
 
 /** SORT **/
 void	big_sort(t_list **stack_a, t_list **stack_b);
+void	is_not_shorted(t_list **stack_a, t_data *data);
 
 /** Utils for checking arg and parsing **/
 /*Split*/
@@ -83,7 +85,7 @@ bool	check_argument_value(char *arguments);
 /** Parsing function **/
 void	add_number(t_list **stack, int data);
 
- /** Utils for list**/
+/** Utils for list**/
 t_list	*copy_list(t_list *head);
 t_list	*listlast(t_list *lst);
 int		listsize(t_list *lst);

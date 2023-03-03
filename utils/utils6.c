@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils6.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bderya <bderya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 17:05:44 by bderya            #+#    #+#             */
-/*   Updated: 2023/03/03 03:43:16 by bderya           ###   ########.fr       */
+/*   Created: 2023/03/03 03:37:09 by bderya            #+#    #+#             */
+/*   Updated: 2023/03/03 03:43:36 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	listclear(t_list **lst)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	t_list	*temp;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc <= 1)
-		return (0);
-	if (check_input(argc, argv, &stack_a) != true)
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		write(2, "Error\n", 6);
-		listclear(&stack_a);
+		temp = (*lst)->next;
+		(*lst)->nbr = 0;
+		free(*lst);
+		*lst = temp;
 	}
-	else if (algoritma(&stack_a, &stack_b) == true)
-		return (0);
-	return (0);
 }

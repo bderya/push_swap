@@ -6,7 +6,7 @@
 /*   By: bderya <bderya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:13:42 by bderya            #+#    #+#             */
-/*   Updated: 2023/03/03 02:52:22 by bderya           ###   ########.fr       */
+/*   Updated: 2023/03/03 03:57:56 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,16 @@ void	big_sort(t_list **stack_a, t_list **stack_b)
 	second_sort(stack_a, stack_b, &data, num_stack_b);
 	if (!(is_sorted(stack_a)))
 		is_not_shorted(stack_a, &data);
+	listclear(stack_a);
+	listclear(stack_b);
+	listclear(&decider);
 }
 
 bool	algoritma(t_list **stack_a, t_list **stack_b)
 {
-	big_sort(stack_a, stack_b);
+	if (listsize(*stack_a) > 10)
+		big_sort(stack_a, stack_b);
+	else
+		sort_small(stack_a, stack_b);
 	return (true);
 }

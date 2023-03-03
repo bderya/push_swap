@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   control.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bderya <bderya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:56:00 by bderya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:38:10 by bderya           ###   ########.fr       */
+/*   Updated: 2023/03/03 03:42:21 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,6 @@ bool	check_input(int argc, char **argv, t_list **stack)
 			return (false);
 	i = 1;
 	if (check_duplicate(stack, argc, argv, i) == false)
-	{
-		//free_struct();
 		return (false);
-	}
 	return (true);
 }

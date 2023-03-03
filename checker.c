@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bderya <bderya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 17:05:44 by bderya            #+#    #+#             */
-/*   Updated: 2023/03/03 03:43:16 by bderya           ###   ########.fr       */
+/*   Created: 2023/03/03 04:44:08 by bderya            #+#    #+#             */
+/*   Updated: 2023/03/03 04:46:29 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-
+	char	*line;
+	
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc <= 1)
@@ -26,7 +27,6 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		listclear(&stack_a);
 	}
-	else if (algoritma(&stack_a, &stack_b) == true)
-		return (0);
-	return (0);
+	line = get_next_line(0);
+	
 }
