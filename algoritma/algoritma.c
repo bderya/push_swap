@@ -6,12 +6,13 @@
 /*   By: bderya <bderya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:13:42 by bderya            #+#    #+#             */
-/*   Updated: 2023/03/03 03:57:56 by bderya           ###   ########.fr       */
+/*   Updated: 2023/03/04 18:40:53 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/* Three number in stack*/
 void	small_numbers(t_list **stack, t_data *my_data)
 {
 	int	index;
@@ -92,7 +93,7 @@ void	big_sort(t_list **stack_a, t_list **stack_b)
 
 bool	algoritma(t_list **stack_a, t_list **stack_b)
 {
-	if (listsize(*stack_a) > 10)
+	if (listsize(*stack_a) > 5)
 		big_sort(stack_a, stack_b);
 	else
 		sort_small(stack_a, stack_b);

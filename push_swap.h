@@ -6,7 +6,7 @@
 /*   By: bderya <bderya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:21:27 by bderya            #+#    #+#             */
-/*   Updated: 2023/03/03 03:38:43 by bderya           ###   ########.fr       */
+/*   Updated: 2023/03/04 22:25:47 by bderya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,14 @@ typedef struct s_data
 
 /* Algo*/
 bool	algoritma(t_list **stack_a, t_list **stack_b);
+void	sort_small(t_list **stack_a, t_list **stack_b);
 
 /* Sort list */
 void	sort_list(t_list *stack, int swapped, long int temp);
+
 /* List control */
 bool	is_sorted(t_list **stack);
+
 /* Find number and index for sort */
 int		my_max(int a, int b);
 int		my_min(int a, int b);
@@ -55,6 +58,7 @@ int		find_max(t_list *head);
 void	find_median(t_list *decider, t_data *data);
 int		find_index(t_list *head, int element);
 int		find_index(t_list *head, int element);
+int		find_min(t_list **stack);
 
 /** Error hand **/
 int		ft_error(void);
@@ -84,6 +88,9 @@ bool	check_argument_value(char *arguments);
 
 /** Parsing function **/
 void	add_number(t_list **stack, int data);
+
+/* Modif get*/
+char	*modif_get(int fd);
 
 /** Utils for list**/
 t_list	*copy_list(t_list *head);
